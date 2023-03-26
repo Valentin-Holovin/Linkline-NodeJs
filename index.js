@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const authRouter = require('./routers/authRouter');
 const userRouter = require('./routers/userRoutes')
+const postRouter = require('./routers/postRoutes')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +13,7 @@ app.use(express.json({ extended: true }));
 
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
+app.use('/post', postRouter);
 
 const start =  async () => {
     try {
